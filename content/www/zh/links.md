@@ -1,21 +1,34 @@
 ---
 title: "Links"
 publishedAt: "2026-08-27 21:59:19"
-updatedAt: "2026-09-06T21:52:09+08:00"
+updatedAt: "2026-11-12T12:06:33+08:00"
 description: "按姓名字母顺序排列的友情链接。"
 links:
   - name: "Nairha"
     desc: "清香宜人"
     url: "https://nairha.nlfts.dev"
     avatar: "https://github.com/nairha.png"
+    stack: "angular"
   - name: "Radiedtya"
-    desc: "清香宜人"
+    desc: "Just a Rocky"
     url: "https://www.radiedtya.web.id/"
     avatar: "https://github.com/radiedtya.png"
+    stack: "react"
   - name: "sidiktsq"
     desc: "构建残酷、功能性且美观的 Web 体验"
     url: "https://sidiktsq.nlfts.dev"
     avatar: "https://github.com/sidiktsq.png"
+    stack: "nuxt"
+  - name: "Dika Blog"
+    desc: "个人网站，用于分享故事和日常体验"
+    url: "https://dikapratama.xyz"
+    avatar: "https://github.com/dikapratamaa.png"
+    stack: "nuxt"
+  - name: "Tokita kun"
+    desc: "具有交互界面的实验网站，并将想法转化为有用的产品."
+    url: "https://dikapratama.xyz"
+    avatar: "https://github.com/tokitakun.png"
+    stack: "nextdotjs"
 ---
 
 ## 关于本站
@@ -43,7 +56,7 @@ interface Link {
 
 ## 要求
 
-- 网站以个人为主体，内容健康，且符合中国大陆和印度尼西亚共和国相关法律法规。
+- 该网站由个人独立管理，包含安全合法的内容，并符合中国大陆和印度尼西亚共和国岛屿的现行法律。
 - 拥有独立域名，全站使用 HTTPS。
 - 建站时间在半年以上，原创文章大于 5 篇，并且持续维护。
 - 需要有独立页面用于展示友情链接。

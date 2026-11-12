@@ -60,6 +60,19 @@ export interface ProjectPost {
   html?: string;
 }
 
+export interface AnimeEntry {
+  slug: string;
+  year: number;
+  watchedAt: string;
+  title: string;
+  description: string;
+  images: string[];
+  rating: number;
+  episodeDurationMinutes: number;
+  categories: string[];
+  pinned?: boolean;
+}
+
 export interface FriendLink {
   name: string;
   desc: string;

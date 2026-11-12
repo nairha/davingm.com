@@ -13,6 +13,7 @@ const contentRoot = path.join(root, "content");
 const watchedPaths = [
   path.join(contentRoot, "blog"),
   path.join(contentRoot, "project"),
+  path.join(contentRoot, "anime"),
   path.join(contentRoot, "www"),
 ];
 const signatures = new Map();
@@ -22,7 +23,11 @@ function isManagedFile(filePath) {
   const relativePath = path.relative(contentRoot, filePath).replaceAll("\\", "/");
   const extension = path.extname(filePath).toLowerCase();
 
-  if (relativePath.startsWith("blog/") || relativePath.startsWith("project/")) {
+  if (
+    relativePath.startsWith("blog/") ||
+    relativePath.startsWith("project/") ||
+    relativePath.startsWith("anime/")
+  ) {
     return extension === ".md" || extension === ".mdx";
   }
 
@@ -129,6 +134,19 @@ function handleFile(filePath, options) {
   processFile(filePath, options);
 }
 
+function safelyHandleFile(filePath, options) {
+  try {
+    handleFile(filePath, options);
+  } catch (error) {
+    const relativePath = path.relative(root, filePath);
+    const location = error.mark
+      ? `:${error.mark.line + 1}:${error.mark.column + 1}`
+      : "";
+    const message = error.reason || error.message || String(error);
+    console.error(`[content] ${relativePath}${location}: ${message}`);
+  }
+}
+
 const watcher = chokidar.watch(watchedPaths, {
   ignored: /(^|[\\/])\../,
   ignoreInitial: false,
@@ -136,11 +154,11 @@ const watcher = chokidar.watch(watchedPaths, {
 });
 
 watcher
-  .on("add", (filePath) => handleFile(filePath, { contentChanged: false, initialize: !ready }))
-  .on("change", (filePath) => handleFile(filePath, { contentChanged: true }))
+  .on("add", (filePath) => safelyHandleFile(filePath, { contentChanged: false, initialize: !ready }))
+  .on("change", (filePath) => safelyHandleFile(filePath, { contentChanged: true }))
   .on("unlink", (filePath) => signatures.delete(filePath))
   .on("ready", () => {
     ready = true;
-    console.log("[content] watching blog, project, about, links and projects metadata");
+    console.log("[content] watching blog, project, anime, about, links and projects metadata");
   })
   .on("error", (error) => console.error("[content] watcher error", error));

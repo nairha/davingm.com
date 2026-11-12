@@ -1,21 +1,34 @@
 ---
 title: "Links"
 publishedAt: "2026-08-27 21:59:19"
-updatedAt: "2026-09-06T21:52:09+08:00"
+updatedAt: "2026-11-12T12:06:48+08:00"
 description: "Links from friends sorted alphabetically by name."
 links:
   - name: "Nairha"
     desc: "Fragrant and pleasant"
     url: "https://nairha.nlfts.dev"
     avatar: "https://github.com/nairha.png"
+    stack: "angular"
   - name: "Radiedtya"
     desc: "Fragrant and pleasant"
     url: "https://www.radiedtya.web.id/"
     avatar: "https://github.com/radiedtya.png"
+    stack: "react"
   - name: "sidiktsq"
     desc: "Building brutal, functional, and beautiful web experiences"
     url: "https://sidiktsq.nlfts.dev"
     avatar: "https://github.com/sidiktsq.png"
+    stack: "nuxt"
+  - name: "Dika Blog"
+    desc: "Personal website for sharing stories and daily experiences"
+    url: "https://dikapratama.xyz"
+    avatar: "https://github.com/dikapratamaa.png"
+    stack: "nuxt"
+  - name: "Tokita kun"
+    desc: "An experimental site with an interface, transforming ideas into useful products  ."
+    url: "https://dikapratama.xyz"
+    avatar: "https://github.com/tokitakun.png"
+    stack: "nextdotjs"
 ---
 
 ## About This Site
@@ -43,7 +56,7 @@ interface Link {
 
 ## Requirements
 
-- The site is run by an individual, contains safe and legal content, and complies with the laws in Mainland China and the Republic of Indonesia.
+- The site is managed on an individual basis, features safe and legal content, and complies with the laws in force within the territory of Mainland China and the Republic of Indonesia.
 - The site has its own domain name and uses HTTPS.
 - The site has been running for at least six months, has more than five original articles, and is actively maintained.
 - The site provides a dedicated page for friend links.
